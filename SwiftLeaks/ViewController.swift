@@ -8,25 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+enum LeakingEnum {
+    case
+    LeakCase,
+    AnotherLeakCase
+}
 
-    var scene : Scene?
-    
+class Primitive {
+    var lightingType: LeakingEnum = .LeakCase
+    var mysub : [Int] = []
+    init() {
+        mysub.append(80)
+    }
+}
+
+class ViewController: UIViewController {
+    var prim: Primitive?
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        scene = MyScene()
+        prim = Primitive()
     }
-
-    func setup() {
-        self.scene = MyScene()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
