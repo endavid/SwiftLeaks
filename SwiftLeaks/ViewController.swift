@@ -11,18 +11,18 @@ import UIKit
 class ViewController: UIViewController {
 
     var scene : Scene?
-    var plugin : Plugin?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         Manager.sharedInstance.initPlugins()
-        let prim = PrimitiveHeir()
-        scene = Scene()
-        prim.queue()
-        scene?.primitives.append(prim)
+        scene = MyScene()
     }
 
+    func setup() {
+        self.scene = MyScene()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
