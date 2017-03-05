@@ -1,8 +1,18 @@
 Enum Leaks
+-------------
+
+Profile this code with Instruments Leaks and you will find an unexpected leak:
+
+![ho](https://i.stack.imgur.com/JmjSG.png)
+
+Configuration
+--------------
+AFAIK, it leaks in this configuration
+* Swift 3, Xcode 8.2.1 (8C1002), iOS 10.2
+
+
+Discussion
 -----------
 
+http://stackoverflow.com/questions/42602301/swift-3-enums-leak-memory-when-the-class-contains-an-array
 
-https://www.dropbox.com/s/bm1ir807zc1bis0/Screenshot%202017-03-04%2022.27.15.png?dl=0
-
-It leaks in Swift 3, Xcode 8.2.1 (8C1002)
-iOS 10.2
